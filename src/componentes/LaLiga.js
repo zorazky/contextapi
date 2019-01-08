@@ -25,7 +25,15 @@ class LaLigaProvider extends Component {
     render() {
         return (
             <LaLigaContext.Provider value={{
-                state: this.state.equipos
+                state: this.state.equipos,
+                esCampeon: (id) => {
+                    const equipos = [...this.state.equipos];
+                    equipos[id].titulos = equipos[id].titulos + 1;
+
+                    this.setState({
+                        state : equipos
+                    })
+                }
             }}>
                 {this.props.children}
             </LaLigaContext.Provider>

@@ -18,6 +18,12 @@ class Equipo extends Component {
                                     {value.state[idEquipo].titulos}
                                 </span>
                             </p>
+
+                            <button className="btn btn-success" type="button" onClick={ () => {
+                                value.esCampeon(idEquipo);
+                            }} >
+                                Es Campeón
+                            </button>
                         </li>
                     )
                 })
